@@ -45,7 +45,7 @@ filme.elenco[3] + '\nano: ' filme.direção +
     generomusical: 'hip-hop/rap lirico'
 }
 
-console.log(`O nome dela é ${pessoa.primeiroNome}, ela tem ${pessoa.idade} e gosta muito de escutar ${pessoa.generomusical}`)*/
+console.log(`O nome dela é ${pessoa.primeiroNome}, ela tem ${pessoa.idade} e gosta muito de escutar ${pessoa.generomusical}`)
 
 //array de objetos
 const professores = [ 
@@ -98,3 +98,42 @@ const filme = {
     assistido: 'sim'
 }
 console.log(filme.elenco[0].ator, 'como', filme.elenco[0].personagem);
+
+//praticando spread/espelhamento de objs/arrays
+const carro = {
+    marca: 'chevrolet',
+    modelo: 'onix',
+    ano: 2021,
+    cidade: ['são leopoldo', 'novo hamburgo', 'porto alegre']
+    
+}
+const carroNovo = {
+    ...carro,
+modelo:'onix plus'}
+console.log(carroNovo.modelo)
+
+//Crie uma função que receba um objeto de pessoa (Exercício 2) 
+//e crie um novo objeto mantendo as propriedades originais e acrescentando:
+//a) Uma propriedade com a lista de suas comidas preferidas; 
+//b)Uma propriedade que seja um objeto, com nome e idade,
+// para representar o melhor amigo da pessoa.
+const pessoa = {
+    primeiroNome: 'Clarice',
+    idade: 22,
+}
+objeto(pessoa)
+function objeto(teste) {
+const pessoaNova = {
+    ...pessoa,
+        comidasFav: ['strogonoff', 'batata assada', 'pizza'],
+        amigo: { 
+            nome0: 'aline', idade: 22
+    
+    } 
+}
+return pessoaNova;
+}
+let result = objeto(teste)
+console.log( `nome da pessoa é ${teste.primeiroNome} e suas comidas preferidas são
+     ${teste.comidasFav[0]}, ${teste.comidasFav[1]} e ${teste.comidasFav[2]}. 
+     Seu melhor amigo se chama ${teste.amigo.nome0} e tem ${teste.amigo.idade} anos`);
